@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body {
+  background: #020617;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-left: 6px solid #3b82f6;
+}
