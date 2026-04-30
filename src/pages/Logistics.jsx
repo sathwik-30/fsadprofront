@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
+import API_BASE_URL from "../config/apiConfig";
 
 function Logistics(){
 
@@ -16,7 +17,7 @@ function Logistics(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/match/all",
+    `${API_BASE_URL}/api/match/all`,
 
     {
 
@@ -60,7 +61,7 @@ function Logistics(){
 
    await fetch(
 
-    "http://localhost:5000/api/logistics/update",
+    `${API_BASE_URL}/api/logistics/update`,
 
     {
 

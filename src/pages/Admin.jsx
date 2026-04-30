@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
+import API_BASE_URL from "../config/apiConfig";
 
 import {
  ResponsiveContainer,
@@ -43,17 +44,17 @@ function Admin(){
    const token = localStorage.getItem("token");
 
    const dRes = await fetch(
-    "http://localhost:5000/api/donation/all",
+    `${API_BASE_URL}/api/donation/all`,
     { headers:{ Authorization: token } }
    );
 
    const rRes = await fetch(
-    "http://localhost:5000/api/request/all",
+    `${API_BASE_URL}/api/request/all`,
     { headers:{ Authorization: token } }
    );
 
    const mRes = await fetch(
-    "http://localhost:5000/api/match/all",
+    `${API_BASE_URL}/api/match/all`,
     { headers:{ Authorization: token } }
    );
 
@@ -86,7 +87,7 @@ function Admin(){
   const token = localStorage.getItem("token");
 
   await fetch(
-   "http://localhost:5000/api/donation/approve",
+   `${API_BASE_URL}/api/donation/approve`,
    {
     method:"POST",
     headers:{
@@ -112,7 +113,7 @@ function Admin(){
   const token = localStorage.getItem("token");
 
   await fetch(
-   "http://localhost:5000/api/request/approve",
+   `${API_BASE_URL}/api/request/approve`,
    {
     method:"POST",
     headers:{
@@ -145,7 +146,7 @@ function Admin(){
   const token = localStorage.getItem("token");
 
   await fetch(
-   "http://localhost:5000/api/match/create",
+   `${API_BASE_URL}/api/match/create`,
    {
     method:"POST",
     headers:{

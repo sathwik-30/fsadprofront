@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import Layout from "../components/Layout";
+import API_BASE_URL from "../config/apiConfig";
 
 function Recipient(){
 
@@ -21,7 +22,7 @@ function Recipient(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/donation/approved",
+    `${API_BASE_URL}/api/donation/approved`,
 
     {
 
@@ -56,7 +57,7 @@ function Recipient(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/request/mine",
+    `${API_BASE_URL}/api/request/mine`,
 
     {
 
@@ -107,7 +108,7 @@ function Recipient(){
 
    await fetch(
 
-    "http://localhost:5000/api/request/add",
+    `${API_BASE_URL}/api/request/add`,
 
     {
 

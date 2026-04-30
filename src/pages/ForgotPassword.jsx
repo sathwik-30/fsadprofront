@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config/apiConfig";
 
 function ForgotPassword(){
 
@@ -34,7 +35,7 @@ function ForgotPassword(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/auth/send-reset-otp",
+    `${API_BASE_URL}/api/auth/send-reset-otp`,
 
     {
 
@@ -96,7 +97,7 @@ function ForgotPassword(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/auth/resend-reset-otp",
+    `${API_BASE_URL}/api/auth/resend-reset-otp`,
 
     {
 
@@ -165,7 +166,7 @@ function ForgotPassword(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/auth/reset-password",
+    `${API_BASE_URL}/api/auth/reset-password`,
 
     {
 

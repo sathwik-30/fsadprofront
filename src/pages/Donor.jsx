@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
+import API_BASE_URL from "../config/apiConfig";
 
 function Donor(){
 
@@ -31,7 +32,7 @@ function Donor(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/donation/mine",
+    `${API_BASE_URL}/api/donation/mine`,
 
     {
 
@@ -67,7 +68,7 @@ function Donor(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/request/all",
+    `${API_BASE_URL}/api/request/all`,
 
     {
 
@@ -125,7 +126,7 @@ function Donor(){
 
    await fetch(
 
-    "http://localhost:5000/api/donation/add",
+    `${API_BASE_URL}/api/donation/add`,
 
     {
 

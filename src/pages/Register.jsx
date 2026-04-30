@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API_BASE_URL from "../config/apiConfig";
 
 function Register(){
 
@@ -55,7 +56,7 @@ function Register(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/auth/send-otp",
+    `${API_BASE_URL}/api/auth/send-otp`,
 
     {
 
@@ -125,7 +126,7 @@ function Register(){
 
    const res = await fetch(
 
-    "http://localhost:5000/api/auth/verify-otp",
+    `${API_BASE_URL}/api/auth/verify-otp`,
 
     {
 
