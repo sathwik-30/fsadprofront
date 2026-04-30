@@ -46,46 +46,29 @@ function ProtectedRoute({allowedRole, children}){
 
 /*
  prevent logged users from seeing login page again
-*/
+*/function PublicRoute({ children }) {
+  const token = localStorage.getItem("token");
+  const role = String(localStorage.getItem("role") || "").toLowerCase();
 
-function PublicRoute({children}){
+  if (token) {
+    const routeMap = {
+      admin: "/admin",
+      donor: "/donor",
+      recipient: "/recipient",
+      logistics: "/logistics"
+    };
 
- const token = localStorage.getItem("token");
+    const redirectPath = routeMap[role];
 
- const role =
-  String(localStorage.getItem("role") || "")
-  .toLowerCase();
+    if (redirectPath) {
+      return <Navigate to={redirectPath} replace />;
+    }
 
-
- if(token){
-
-  const routeMap = {
-
-   admin:"/admin",
-
-   donor:"/donor",
-
-   recipient:"/recipient",
-
-   logistics:"/logistics"
-
-  };
-
-
-  const redirectPath = routeMap[role];
-
-
-  if(redirectPath){
-
-   return <Navigate to={redirectPath} replace />;
-
+    // 🔥 VERY IMPORTANT fallback
+    return <Navigate to="/" replace />;
   }
 
- }
-
-
- return children;
-
+  return children;
 }
 
 
@@ -226,8 +209,7 @@ function App(){
 
     {/* fallback */}
 
-    <Route path="*" element={<Navigate to="/" replace />} />
-
+<Route path="*" element={<Login />} />
 
    </Routes>
 
